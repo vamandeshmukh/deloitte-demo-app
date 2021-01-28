@@ -28,13 +28,19 @@ public class StreamsDemo {
 			System.out.println(it.next().toString());
 		}
 
-		System.out.println("using for each anonymous inner class");
+		System.out.println("using forEach anonymous inner class");
 
 		empList.forEach(new Consumer<Employee>() {
 			@Override
 			public void accept(Employee emp) {
 				System.out.println(emp.toString());
 			}
+		});
+
+		System.out.println("using forEach with lambda expression");
+
+		empList.forEach((emp) -> {
+			System.out.println(emp.toString());
 		});
 
 	}
