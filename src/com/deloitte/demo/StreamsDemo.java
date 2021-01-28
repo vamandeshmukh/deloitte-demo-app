@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 // streams - group and proccess data 
 
@@ -42,6 +43,16 @@ public class StreamsDemo {
 		empList.forEach((emp) -> {
 			System.out.println(emp.toString());
 		});
+
+//		System.out.println("conversion from List to a stream");		
+//		Stream<Employee> empStream = empList.stream();
+
+		System.out.println("Employees with salary > 1500");
+
+		Stream<Employee> empWithMoreSalary = empList.stream().filter(emp -> emp.salary > 1500);
+
+		empWithMoreSalary.forEach(emp -> System.out.println(emp.toString()));
+
 
 	}
 
