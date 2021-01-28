@@ -44,8 +44,11 @@ public class StreamsDemo {
 			System.out.println(emp.toString());
 		});
 
-//		System.out.println("conversion from List to a stream");		
-//		Stream<Employee> empStream = empList.stream();
+		System.out.println("All employees as a stream");
+
+		Stream<Employee> empStream = empList.stream();
+
+		empStream.forEach(emp -> System.out.println(emp.toString()));
 
 		System.out.println("Employees with salary > 1500");
 
@@ -53,6 +56,11 @@ public class StreamsDemo {
 
 		empWithMoreSalary.forEach(emp -> System.out.println(emp.toString()));
 
+		System.out.println("First three Employees ");
+
+		Stream<Employee> firstThreeEmps = empList.stream().limit(3);
+
+		firstThreeEmps.forEach(emp -> System.out.println(emp.toString()));
 
 	}
 
