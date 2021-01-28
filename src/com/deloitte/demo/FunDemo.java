@@ -8,7 +8,12 @@ package com.deloitte.demo;
 // 2. with anonymous inner class 
 // 3. with lambda expression 
 
-//@FunctionalInterface
+// Java 8 onwards - 
+// an interface can contain zero or more static methods 
+// an interface can contain zero or more default (non static) methods 
+
+//@FunctionalInterface 
+
 interface FunInt {
 
 	public default void aDefaultMethod() {
