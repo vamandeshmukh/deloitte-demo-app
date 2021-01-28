@@ -8,8 +8,17 @@ package com.deloitte.demo;
 // 2. with anonymous inner class 
 // 3. with lambda expression 
 
-@FunctionalInterface
+//@FunctionalInterface
 interface FunInt {
+
+	public default void aDefaultMethod() {
+		System.out.println("a default method");
+	}
+
+	public default void anotherDefaultMethod() {
+		System.out.println("another default method");
+	}
+
 	// other methods - concrete methods, (static methods and default methods )
 	public static void aStaticMethod() {
 		System.out.println("a static method");
@@ -19,23 +28,34 @@ interface FunInt {
 		System.out.println("another static method");
 	}
 
-	public abstract void funMethod();
+//	public abstract void funMethod();
 }
 
-//3. with lambda expression 
-public class FunDemo {
+// calling / invoking a default emthod from an interface 
+
+public class FunDemo implements FunInt {
+	
 	public static void main(String[] args) {
-		System.out.println("Start");
-
-		FunInt.aStaticMethod();
-		FunInt.anotherStaticMethod();
-
-		FunInt obj = () -> {
-			System.out.println("fun method using lambda expression");
-		};
-		obj.funMethod();
+		FunDemo obj = new FunDemo();
+		obj.aDefaultMethod();
+		obj.anotherDefaultMethod();
 	}
 }
+
+////3. with lambda expression 
+//public class FunDemo {
+//	public static void main(String[] args) {
+//		System.out.println("Start");
+//
+//		FunInt.aStaticMethod();
+//		FunInt.anotherStaticMethod();
+//
+//		FunInt obj = () -> {
+//			System.out.println("fun method using lambda expression");
+//		};
+//		obj.funMethod();
+//	}
+//}
 
 ////2. with anonymous inner class  
 //public class FunDemo {
