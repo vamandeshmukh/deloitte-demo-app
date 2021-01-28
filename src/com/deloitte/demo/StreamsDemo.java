@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 // streams - group and proccess data 
@@ -61,6 +62,23 @@ public class StreamsDemo {
 		Stream<Employee> firstThreeEmps = empList.stream().limit(3);
 
 		firstThreeEmps.forEach(emp -> System.out.println(emp.toString()));
+
+		System.out.println("All except first three Employees ");
+
+		Stream<Employee> skipFirstThreeEmps = empList.stream().skip(3);
+
+		skipFirstThreeEmps.forEach(emp -> System.out.println(emp.toString()));
+
+		System.out.println("pay hike using map()");
+
+//		map(Function<? super T,? extends R> mapper)
+
+		List<Double> payHike = empList.stream().map(emp -> emp.salary = emp.salary + 1000).collect(Collectors.toList());
+
+		payHike.forEach(emp -> System.out.println(emp.toString()));
+		System.out.println(empList);
+		
+		List<Employee> aa = empList.stream().filter().limit().map().collect();
 
 	}
 
