@@ -78,7 +78,7 @@ public class StreamsDemo {
 		payHike.forEach(emp -> System.out.println(emp.toString()));
 		System.out.println(empList);
 		
-		List<Employee> aa = empList.stream().filter().limit().map().collect();
+//		List<Employee> aa = empList.stream().filter().limit().map().collect();
 
 	}
 
