@@ -10,6 +10,14 @@ package com.deloitte.demo;
 
 @FunctionalInterface
 interface FunInt {
+	// other methods - concrete methods, (static methods and default methods )
+	public static void aStaticMethod() {
+		System.out.println("a static method");
+	}
+
+	public static void anotherStaticMethod() {
+		System.out.println("another static method");
+	}
 
 	public abstract void funMethod();
 }
@@ -18,6 +26,10 @@ interface FunInt {
 public class FunDemo {
 	public static void main(String[] args) {
 		System.out.println("Start");
+
+		FunInt.aStaticMethod();
+		FunInt.anotherStaticMethod();
+
 		FunInt obj = () -> {
 			System.out.println("fun method using lambda expression");
 		};
